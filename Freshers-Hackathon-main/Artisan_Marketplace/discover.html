@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Discover — Desi Districts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/discover.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="index.html" class="brand"><span class="brand-name">Desi District</span></a>
+    </div>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.textContent==='☰'?'✕':'☰'" aria-label="Menu">☰</button>
+    <div class="nav-right">
+      <a href="index.html">Home</a><a href="discover.html">Discover</a><a href="search.html">Search</a><a href="auth.html">Sign in</a><a href="cart.html">Cart (<span id="navCartCount2">0</span>)</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <header class="section-head">
+      <h1>Nearby Artisans & Shops</h1>
+      <p class="muted">This is a prototype. Click a shop card to filter products on the marketplace.</p>
+    </header>
+
+    <section id="shopsList" class="shops-grid"></section>
+  </main>
+
+  <footer class="footer wrap">© 2025 Desi Districts</footer>
+  <script src="js/discover.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+@import url('index.css');
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+  padding-top: 32px;
+}
+
+.sidebar .section-card {
+  margin-bottom: 20px;
+  padding: 20px;
+  background: var(--card);
+  border-radius: 2px;
+  box-shadow: 0 2px 16px var(--shadow);
+}
+
+.sidebar h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 8px 16px;
+  border-radius: 2px;
+  border: 1px solid var(--sand);
+  font-weight: 500;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--text);
+  background: var(--bg);
+  transition: all 0.25s;
+  letter-spacing: 0.03em;
+}
+
+.chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.chip.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.chip.handicrafts, .chip.textiles, .chip.bakery, .chip.music, .chip.all {
+  background: var(--bg);
+  color: var(--text);
+}
+.chip.handicrafts.active, .chip.textiles.active, .chip.bakery.active, .chip.music.active, .chip.all.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.search {
+  display: flex;
+  gap: 8px;
+}
+
+.search input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 2px;
+  border: 1px solid var(--sand);
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg);
+  transition: border-color 0.3s;
+}
+
+.search input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.search button {
+  padding: 10px 18px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+
+.search button:hover {
+  background: #8B4526;
+}
+
+.sidebar select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--sand);
+  border-radius: 2px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  background: var(--bg);
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

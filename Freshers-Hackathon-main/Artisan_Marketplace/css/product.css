@@ -1,0 +1,26 @@
+@import url('index.css');
+
+.section-card {
+  padding: 24px;
+  background: var(--card);
+  border-radius: 2px;
+  box-shadow: 0 2px 16px var(--shadow);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 2px;
+  border: 1px solid var(--sand);
+  margin: 8px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  background: var(--bg);
+  transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(160,82,45,0.1);
+}

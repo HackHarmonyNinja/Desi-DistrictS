@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Seller Dashboard — Desi Districts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/seller-dashboard.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="index.html" class="brand"><span class="brand-name">Desi District</span></a>
+    </div>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.textContent==='☰'?'✕':'☰'" aria-label="Menu">☰</button>
+    <div class="nav-right">
+      <a href="index.html">Home</a><a href="discover.html">Discover</a><a href="search.html">Search</a><a href="cart.html">Cart</a><a href="auth.html">Sign in</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <header class="section-head"><h1>Seller Dashboard</h1><p class="muted">Add products and manage your storefront (prototype)</p></header>
+
+    <section class="dashboard-grid">
+      <aside class="section-card" style="min-width:280px">
+        <h3>Actions</h3>
+        <div class="vstack">
+          <button id="openAddProduct" class="btn primary">Add New Product</button>
+          <button id="viewMyProducts" class="btn ghost">My Products</button>
+        </div>
+      </aside>
+
+      <section class="section-card" id="dashboardMain" style="flex:1">
+        <h3>Overview</h3>
+        <div id="sellerContent">No content yet — click Add New Product to begin.</div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer wrap">© 2025 Desi Districts</footer>
+
+  <script src="js/seller-dashboard.js"></script>
+</body>
+</html>

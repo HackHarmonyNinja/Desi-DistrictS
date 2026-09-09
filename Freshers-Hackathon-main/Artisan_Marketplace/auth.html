@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign Up / Log In — Desi District</title>
+  <meta name="description" content="Join Desi District to discover and support India's local artisans.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-bg">
+
+<div class="auth-wrap">
+  <div class="auth-card">
+    <aside class="auth-left">
+      <div class="left-inner">
+        <span class="brand-logo">Desi District</span>
+        <h2 class="tagline">Where every thread tells<br>a story of tradition</h2>
+        <p class="tagline-sub">Join a community preserving India's craft heritage</p>
+      </div>
+    </aside>
+
+    <main class="auth-right">
+      <div class="auth-header">
+        <h1>Welcome</h1>
+        <p class="auth-desc">Create an account or sign in to continue</p>
+      </div>
+
+      <div class="auth-toggle">
+        <button id="signupBtn" class="toggle-btn active" type="button">Sign Up</button>
+        <button id="loginBtn" class="toggle-btn" type="button">Log In</button>
+      </div>
+
+      <!-- Sign Up Form -->
+      <form id="signupForm" novalidate>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input id="name" placeholder="Enter your full name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input id="phone" placeholder="+91 XXXXX XXXXX" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Create a password" required />
+        </div>
+
+        <div class="role-section">
+           <span class="role-label">I am a</span>
+           <div class="role-grid">
+             <label class="role-glass-card active" id="cardBuyer">
+               <input type="radio" name="role" value="Buyer" checked />
+               <div class="role-card-content">
+                 <svg class="role-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                   <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+                   <line x1="3" y1="6" x2="21" y2="6"></line>
+                   <path d="M16 10a4 4 0 01-8 0"></path>
+                 </svg>
+                 <span class="role-title">Buyer</span>
+                 <span class="role-desc">Discover & buy direct from local artisans</span>
+               </div>
+             </label>
+
+             <label class="role-glass-card" id="cardSeller">
+               <input type="radio" name="role" value="Seller" />
+               <div class="role-card-content">
+                 <svg class="role-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                   <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
+                   <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                 </svg>
+                 <span class="role-title">Seller</span>
+                 <span class="role-desc">Showcase crafts & manage your shop</span>
+               </div>
+             </label>
+           </div>
+         </div>
+
+        
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Create Account</button>
+        </div>
+      </form>
+
+      <!-- Login Form -->
+      <form id="loginForm" class="hidden" novalidate>
+        <div class="form-group">
+          <label for="loginName">Name</label>
+          <input id="loginName" placeholder="Enter your name" required />
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" type="password" placeholder="Enter your password" required />
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Log In</button>
+        </div>
+      </form>
+      <!-- Aesthetic Seller Onboarding Modal -->
+<div id="sellerModal" class="seller-modal-overlay">
+  <div class="seller-modal-container">
+    
+    <header class="seller-modal-header">
+      <div class="header-brand">
+        <span class="badge-fiverr">Seller Studio</span>
+        <h2>Complete Your Artisan Profile</h2>
+      </div>
+      <p class="header-subtitle">Showcase your authentic craft to local buyers and storytellers.</p>
+    </header>
+
+    <form id="sellerOnboardingForm" class="seller-modal-body">
+      
+      <!-- Step 1: Identity Verification -->
+      <div class="form-card">
+        <label class="card-label">1. Identity Verification <span class="required">*</span></label>
+        <span class="card-hint">Choose one government-recognized artisan or business identification.</span>
+        <div class="input-grid-2">
+          <div class="field-group">
+            <label for="pehchanId">Pehchan Card / ID</label>
+            <input type="text" id="pehchanId" placeholder="Enter Pehchan ID number" />
+          </div>
+          <div class="field-group">
+            <label for="udyamId">UDYAM ID</label>
+            <input type="text" id="udyamId" placeholder="e.g. UDYAM-WB-00-0000000" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2: Preferred Language -->
+      <div class="form-card">
+        <div class="label-with-mic">
+          <label class="card-label">2. Preferred Spoken Language <span class="required">*</span></label>
+          <button type="button" class="mic-btn" title="Voice Assist" onclick="toggleVoiceAssist('langVoice')">
+            <svg class="mic-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+              <line x1="12" y1="19" x2="12" y2="23"></line>
+              <line x1="8" y1="23" x2="16" y2="23"></line>
+            </svg>
+          </button>
+        </div>
+        <select id="preferredLang" required>
+          <option value="Bengali" selected>Bengali (বাংলা)</option>
+          <option value="English">English</option>
+          <option value="Hindi">Hindi (हिंदी)</option>
+          <option value="Other Regional">Other Regional Language</option>
+        </select>
+        <span id="langVoiceStatus" class="voice-status"></span>
+      </div>
+
+      <!-- Step 3: Artform Selection -->
+      <div class="form-card">
+        <div class="label-with-mic">
+          <label class="card-label">3. Primary Artform / Craft <span class="required">*</span></label>
+          <button type="button" class="mic-btn" title="Voice Input for Custom Artform" onclick="toggleVoiceAssist('artformVoice')">
+            <svg class="mic-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+              <line x1="12" y1="19" x2="12" y2="23"></line>
+              <line x1="8" y1="23" x2="16" y2="23"></line>
+            </svg>
+          </button>
+        </div>
+        <select id="artformSelect" onchange="toggleOtherArtform(this.value)" required>
+          <option value="Visual arts">Visual arts</option>
+          <option value="Textiles & decorative arts">Textiles & decorative arts</option>
+          <option value="Sculpture & handicrafts">Sculpture & handicrafts</option>
+          <option value="Performing arts">Performing arts</option>
+          <option value="Storytelling / cultural arts">Storytelling / cultural arts</option>
+          <option value="Other">Other (Add your own)</option>
+        </select>
+        
+        <div id="otherArtformGroup" class="field-group custom-artform-input" style="display: none; margin-top: 10px;">
+          <input type="text" id="customArtform" placeholder="Specify your unique artform or product type..." />
+        </div>
+        <span id="artformVoiceStatus" class="voice-status"></span>
+      </div>
+
+      <!-- Step 4: Region & District -->
+      <div class="form-card">
+        <label class="card-label">4. Location <span class="required">*</span></label>
+        <div class="input-grid-2">
+          <div class="field-group">
+            <label>State</label>
+            <input type="text" value="West Bengal" readonly class="disabled-input" />
+          </div>
+          <div class="field-group">
+            <label for="districtSelect">District</label>
+            <select id="districtSelect" required>
+              <option value="" disabled selected>Select your district</option>
+              <option value="Alipurduar">Alipurduar</option>
+              <option value="Bankura">Bankura</option>
+              <option value="Paschim Bardhaman">Paschim Bardhaman</option>
+              <option value="Purba Bardhaman">Purba Bardhaman</option>
+              <option value="Birbhum">Birbhum</option>
+              <option value="Cooch Behar">Cooch Behar</option>
+              <option value="Dakshin Dinajpur">Dakshin Dinajpur</option>
+              <option value="Darjeeling">Darjeeling</option>
+              <option value="Hooghly">Hooghly</option>
+              <option value="Howrah">Howrah</option>
+              <option value="Jalpaiguri">Jalpaiguri</option>
+              <option value="Jhargram">Jhargram</option>
+              <option value="Kalimpong">Kalimpong</option>
+              <option value="Kolkata">Kolkata</option>
+              <option value="Maldah">Maldah</option>
+              <option value="Murshidabad">Murshidabad</option>
+              <option value="Nadia">Nadia</option>
+              <option value="North 24 Parganas">North 24 Parganas</option>
+              <option value="Paschim Medinipur">Paschim Medinipur</option>
+              <option value="Purba Medinipur">Purba Medinipur</option>
+              <option value="Purulia">Purulia</option>
+              <option value="South 24 Parganas">South 24 Parganas</option>
+              <option value="Uttar Dinajpur">Uttar Dinajpur</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5: Shop Address (Optional) -->
+      <div class="form-card">
+        <label class="card-label">5. Shop Address <span class="optional-tag">(Optional)</span></label>
+        <input type="text" id="sellerShopAddress" placeholder="Workshop, village studio, or home address" />
+      </div>
+
+      <!-- Step 6: Tell Us About Yourself -->
+      <div class="form-card">
+        <div class="label-with-mic">
+          <label class="card-label">6. Tell Us About Yourself & Your Craft <span class="required">*</span></label>
+          <button type="button" class="mic-btn" title="Voice Dictation" onclick="toggleVoiceAssist('bioVoice')">
+            <svg class="mic-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+              <line x1="12" y1="19" x2="12" y2="23"></line>
+              <line x1="8" y1="23" x2="16" y2="23"></line>
+            </svg>
+          </button>
+        </div>
+        <textarea id="sellerBio" rows="4" placeholder="Briefly describe your story, materials used, technique, and vision..." required></textarea>
+        <span id="bioVoiceStatus" class="voice-status"></span>
+      </div>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn-save-profile">Save & Launch Shop</button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<!-- Saved Profile Dialog Box -->
+<div id="savedDialogOverlay" class="dialog-overlay" style="display: none;">
+  <div class="dialog-box">
+    <div class="dialog-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+      </svg>
+    </div>
+    <h3>Profile Saved!</h3>
+    <p>Your details have been successfully updated in our artisan database.</p>
+    <button type="button" class="btn-dialog-close" onclick="closeSavedDialog()">Continue to Dashboard</button>
+  </div>
+</div>
+
+      <p class="auth-footer-text">By continuing, you support India's artisan heritage</p>
+    </main>
+  </div>
+</div>
+
+<script src="js/auth.js"></script>
+</body>
+</html>

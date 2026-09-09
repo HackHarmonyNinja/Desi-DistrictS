@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Product Review — Desi Districts</title>
+<link rel="stylesheet" href="css/review.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="index.html" class="brand"><span class="brand-name">Desi District</span></a>
+    </div>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.textContent==='☰'?'✕':'☰'" aria-label="Menu">☰</button>
+    <div class="nav-right">
+      <a href="index.html">Home</a><a href="search.html">Search</a><a href="cart.html">Cart</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <h1>Product Review</h1>
+    <div id="productReview" class="section-card"></div>
+
+    <div class="section-card">
+      <h3>Write a Review</h3>
+      <label>Rating:</label>
+      <select id="reviewRating">
+        <option value="5">★★★★★ 5/5</option>
+        <option value="4">★★★★ 4/5</option>
+        <option value="3">★★★ 3/5</option>
+        <option value="2">★★ 2/5</option>
+        <option value="1">★ 1/5</option>
+      </select>
+      <textarea id="reviewText" placeholder="Write your review here..."></textarea>
+      <button id="submitReview" class="btn primary">Submit Review</button>
+    </div>
+
+    <div class="section-card">
+      <h3>Reviews</h3>
+      <div id="reviewsList"></div>
+    </div>
+  </main>
+
+  <footer class="footer wrap">© 2025 Desi Districts</footer>
+  <script src="js/review.js"></script>
+</body>
+</html>

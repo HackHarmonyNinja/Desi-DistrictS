@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Desi District — Discover India's Local Artisans</title>
+  <meta name="description" content="Discover authentic handmade products from India's finest local artisans. Support traditional crafts, eliminate middlemen, preserve heritage.">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="index.html" class="brand">
+        <span class="brand-name">Desi District</span>
+      </a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    <div class="nav-right" id="navRight">
+      <a href="index.html">Home</a>
+      <a href="discover.html">Discover</a>
+      <a href="search.html">Search</a>
+      <a href="wishlist.html">Wishlist</a>
+      <a href="cart.html" id="cartLink">Cart (<span id="navCartCount">0</span>)</a>
+      <a href="auth.html">Sign in</a>
+    </div>
+  </nav>
+
+  <header class="hero hero-home">
+    <div class="hero-bg"></div>
+    <div class="hero-dark"></div>
+    <div class="hero-content wrap">
+      <div class="hero-badge">India's Local Artisan Marketplace</div>
+      <h1>Where Craft Meets<br>Community</h1>
+      <p>
+        Discover authentic handmade treasures from master artisans in your neighbourhood.
+        Every purchase preserves a tradition, supports a family, and tells a story.
+      </p>
+      <div class="hero-buttons">
+        <a href="discover.html" class="btn primary">Explore Artisans</a>
+        <a href="auth.html" class="btn ghost">Join the Community</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- WHY DESI DISTRICT -->
+    <section class="why-section reveal">
+      <h2 class="section-title">Why Desi District</h2>
+      <p class="section-subtitle">Connecting you directly with the hands that create</p>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">📍</div>
+          <h3>Discover Locally</h3>
+          <p>Find artisans near you using live geolocation. Discover hidden craft traditions in your own neighbourhood.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🤝</div>
+          <h3>Direct from Artisan</h3>
+          <p>No middlemen. Fair prices for you, better earnings for artisans. Every rupee supports their craft directly.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">🏛️</div>
+          <h3>Preserve Heritage</h3>
+          <p>Keep centuries-old traditions alive. From Bandhani to terracotta, every purchase protects India's craft legacy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTISAN STORIES -->
+    <section class="story-section reveal">
+      <div class="story-header">
+        <h2 class="section-title">Made by Hands. Rooted in Heritage.</h2>
+        <p class="section-subtitle">Every creation carries centuries of tradition, skill, and soul</p>
+      </div>
+      <div class="story-grid">
+        <div class="story-card">
+          <img src="assets/images/story-blockprint.png" alt="Block printing artisan pressing carved wooden stamps onto fabric with natural dyes" loading="lazy">
+          <div class="story-overlay">
+            <div class="story-tag">Rajasthan</div>
+            <h3>Block Printing</h3>
+            <p>Hand-carved teak blocks, natural dyes, and patterns passed through generations.</p>
+          </div>
+        </div>
+        <div class="story-card">
+          <img src="assets/images/story-woodcraft.png" alt="Artisan carving intricate floral patterns in wood" loading="lazy">
+          <div class="story-overlay">
+            <div class="story-tag">Kashmir</div>
+            <h3>Wood Carving</h3>
+            <p>Walnut wood transformed into art with centuries-old Kashmiri carving techniques.</p>
+          </div>
+        </div>
+        <div class="story-card">
+          <img src="assets/images/story-embroidery.png" alt="Traditional mirror-work embroidery with vibrant threads" loading="lazy">
+          <div class="story-overlay">
+            <div class="story-tag">Gujarat</div>
+            <h3>Mirror Embroidery</h3>
+            <p>Kutch's iconic mirror-work — tiny reflections woven into vibrant, storied textiles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="products-section reveal">
+      <div class="section-head">
+        <h2>Featured Products</h2>
+        <div class="meta">Showing <span id="homeShownCount">0</span> artisan creations</div>
+      </div>
+      <div id="homeProducts" class="products grid-3"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      © 2025 Desi District — Celebrating India's Artisan Heritage
+    </div>
+  </footer>
+
+  <script src="js/index.js"></script>
+</body>
+</html>

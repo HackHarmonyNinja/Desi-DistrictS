@@ -1,0 +1,608 @@
+@import url('index.css');
+
+/* Auth Page */
+.auth-bg {
+  background: var(--bg);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.auth-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.auth-card {
+  display: flex;
+  width: 980px;
+  max-width: 100%;
+  min-height: 620px;
+  overflow: hidden;
+  background: var(--card);
+  box-shadow: 0 20px 60px rgba(44,36,32,0.1);
+}
+
+/* Left Panel — Artisan Image */
+.auth-left {
+  position: relative;
+  flex: 0 0 440px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 40px;
+  overflow: hidden;
+  background-image:
+    linear-gradient(180deg, rgba(44,36,32,0.2) 0%, rgba(44,36,32,0.65) 100%),
+    url('../assets/images/auth-artisan.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.left-inner {
+  width: 100%;
+  padding: 28px;
+  border-radius: 2px;
+  backdrop-filter: blur(16px);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+.brand-logo {
+  font-family: 'Samarkan';
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+}
+
+.tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 12px;
+  color: #fff;
+}
+
+.tagline-sub {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Right Panel — Form */
+.auth-right {
+  flex: 1 1 auto;
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--card);
+  overflow-y: auto;
+}
+
+.auth-header {
+  margin-bottom: 24px;
+}
+
+.auth-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 6px;
+}
+
+.auth-desc {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Toggle Buttons */
+.auth-toggle {
+  display: flex;
+  gap: 0;
+  margin-bottom: 24px;
+  border-bottom: 2px solid var(--sand);
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  padding: 10px 24px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--muted);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.toggle-btn.active {
+  color: var(--accent);
+}
+
+.toggle-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.auth-right input,
+.auth-right textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 0;
+  border: 1px solid var(--sand);
+  border-radius: 2px;
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box;
+}
+
+.auth-right input:focus,
+.auth-right textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(160,82,45,0.1);
+}
+
+.auth-right textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+/* Glassmorphism Role Selector */
+.role-section {
+  margin: 20px 0;
+}
+
+.role-section .role-label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.role-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.role-glass-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 8px;
+  background: rgba(250, 247, 242, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid var(--sand);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+.role-glass-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.role-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.role-icon {
+  width: 26px;
+  height: 26px;
+  stroke: var(--muted);
+  margin-bottom: 4px;
+  transition: stroke 0.25s ease, transform 0.25s ease;
+}
+
+.role-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.role-desc {
+  font-size: 0.72rem;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+/* Hover & Active Interactions */
+.role-glass-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--clay);
+  box-shadow: 0 8px 20px rgba(44, 36, 32, 0.06);
+}
+
+.role-glass-card:active {
+  transform: scale(0.97);
+}
+
+.role-glass-card.active {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: var(--accent);
+  box-shadow: 0 8px 24px rgba(160, 82, 45, 0.15);
+}
+
+.role-glass-card.active .role-icon {
+  stroke: var(--accent);
+  transform: scale(1.08);
+}
+
+.role-glass-card.active .role-title {
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .role-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Seller extras */
+#sellerExtras {
+  margin-top: 8px;
+}
+
+/* Form Actions */
+.form-actions {
+  margin-top: 20px;
+}
+
+.form-actions .btn.primary {
+  width: 100%;
+  padding: 14px;
+  font-size: 0.85rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.form-actions .btn.primary:hover {
+  background: #8B4526;
+  transform: translateY(-1px);
+}
+
+.auth-footer-text {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 24px;
+  font-style: italic;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 820px) {
+  .auth-card {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .auth-left {
+    flex: none;
+    height: 240px;
+    padding: 24px;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+  }
+
+  .auth-right {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-wrap {
+    padding: 0;
+  }
+
+  .auth-card {
+    box-shadow: none;
+  }
+
+  .auth-left {
+    height: 200px;
+  }
+
+  .brand-logo {
+    font-size: 1.4rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+  }
+}
+/* ==========================================================================
+   Fiverr-Style Seller Onboarding Modal & Voice UI
+   ========================================================================== */
+
+.seller-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(26, 20, 18, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.seller-modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.seller-modal-container {
+  background: rgba(255, 252, 248, 0.95);
+  width: 90%;
+  max-width: 680px;
+  max-height: 88vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1.5px solid var(--sand);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+.seller-modal-header {
+  border-bottom: 1px solid var(--sand);
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.badge-fiverr {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.seller-modal-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--text);
+  margin: 0 0 4px 0;
+}
+
+.header-subtitle {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.form-card {
+  background: #ffffff;
+  border: 1px solid var(--sand);
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
+
+.card-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text);
+  display: block;
+}
+
+.card-hint {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.label-with-mic {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.mic-btn {
+  background: rgba(160, 82, 45, 0.08);
+  border: 1px solid rgba(160, 82, 45, 0.2);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mic-btn:hover {
+  background: var(--accent);
+}
+
+.mic-btn:hover .mic-icon {
+  stroke: #ffffff;
+}
+
+.mic-icon {
+  width: 16px;
+  height: 16px;
+  stroke: var(--accent);
+}
+
+.mic-btn.listening {
+  animation: pulse-mic 1.2s infinite;
+  background: var(--accent);
+}
+
+.mic-btn.listening .mic-icon {
+  stroke: #ffffff;
+}
+
+@keyframes pulse-mic {
+  0% { box-shadow: 0 0 0 0 rgba(160, 82, 45, 0.5); }
+  70% { box-shadow: 0 0 0 8px rgba(160, 82, 45, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(160, 82, 45, 0); }
+}
+
+.voice-status {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.input-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.disabled-input {
+  background: #f4f0ea;
+  color: #777;
+  cursor: not-allowed;
+}
+
+.optional-tag {
+  font-weight: normal;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.btn-save-profile {
+  width: 100%;
+  background: var(--accent);
+  color: #ffffff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn-save-profile:hover {
+  background: #8b4513;
+}
+
+/* Dialog Box */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+}
+
+.dialog-box {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 360px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.dialog-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 12px;
+  background: rgba(46, 125, 50, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: #2e7d32;
+}
+
+.btn-dialog-close {
+  background: var(--text);
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 14px;
+}

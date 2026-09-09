@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seller Studio — Desi District</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Style Links -->
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/seller.css" />
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fbf8f3;
+      color: #2c2420;
+    }
+
+    .seller-navbar-fixed {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 16px 48px !important;
+      background: rgba(251, 248, 243, 0.95) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e2d7c7 !important;
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 1000 !important;
+      box-sizing: border-box !important;
+      width: 100% !important;
+    }
+
+    .brand-group {
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+    }
+
+    .brand-logo {
+      font-family: 'Samarkan', 'Playfair Display', serif !important;
+      font-size: 1.8rem !important;
+      color: #2c2420 !important;
+      text-decoration: none !important;
+      font-weight: 500 !important;
+    }
+
+    .seller-badge {
+      background: #a0522d !important;
+      color: #ffffff !important;
+      font-size: 0.65rem !important;
+      font-weight: 700 !important;
+      font-family: system-ui, -apple-system, sans-serif !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.08em !important;
+      padding: 3px 8px !important;
+      border-radius: 4px !important;
+    }
+
+    .nav-links-right {
+      display: flex !important;
+      gap: 28px !important;
+      align-items: center !important;
+    }
+
+    .nav-links-right a {
+      text-decoration: none !important;
+      color: #2c2420 !important;
+      font-size: 0.9rem !important;
+      font-weight: 500 !important;
+      transition: color 0.2s ease !important;
+      cursor: pointer;
+    }
+
+    .nav-links-right a:hover {
+      color: #a0522d !important;
+    }
+
+    .nav-links-right a.buyer-switch-link {
+      color: #a0522d !important;
+      font-weight: 600 !important;
+    }
+
+    .hero-banner-container {
+      position: relative !important;
+      min-height: 420px !important;
+      background-color: #3a2e2b !important;
+      background-image: url('hero-bg.jpg'), url('../hero-bg.jpg') !important;
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center !important;
+      padding: 60px 20px 100px 20px !important;
+      box-sizing: border-box !important;
+    }
+
+    .hero-banner-overlay {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      background: rgba(20, 15, 12, 0.55) !important;
+      z-index: 1 !important;
+    }
+
+    .hero-banner-content {
+      position: relative !important;
+      z-index: 2 !important;
+      max-width: 700px !important;
+      color: #ffffff !important;
+    }
+
+    .hero-tag {
+      font-size: 0.75rem !important;
+      letter-spacing: 0.15em !important;
+      text-transform: uppercase !important;
+      color: #e2d7c7 !important;
+      font-weight: 600 !important;
+      display: block !important;
+      margin-bottom: 12px !important;
+    }
+
+    .hero-banner-content h1 {
+      font-family: 'Playfair Display', serif !important;
+      font-size: 3rem !important;
+      color: #ffffff !important;
+      margin: 0 0 16px 0 !important;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .hero-banner-content p {
+      font-size: 1rem !important;
+      color: #f0e6d8 !important;
+      line-height: 1.6 !important;
+      margin: 0 !important;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="seller-navbar-fixed">
+    <div class="brand-group">
+      <a href="seller-home.html" class="brand-logo">dɛşì dìştrìct</a>
+      <span class="seller-badge">SELLER STUDIO</span>
+    </div>
+    
+    <div class="nav-links-right">
+      <a onclick="showSellerTab('homeTab')">Studio Home</a>
+      <a onclick="showSellerTab('feedTab')">Feed</a>
+      <a href="https://gem.gov.in/" target="_blank">GeM ↗</a>
+      <a onclick="showSellerTab('financeTab')">Finance</a>
+      <a onclick="showSellerTab('profileTab')">My Profile</a>
+      <a href="index.html" class="buyer-switch-link">As a Buyer</a>
+    </div>
+  </nav>
+
+  <!-- TAB 1: STUDIO HOME -->
+  <div id="homeTab" class="seller-tab-content active-tab">
+    <!-- Hero Banner -->
+    <section class="hero-banner-container">
+      <div class="hero-banner-overlay"></div>
+      <div class="hero-banner-content">
+        <span class="hero-tag">ARTISAN DASHBOARD</span>
+        <h1>Where Craft Meets Community</h1>
+        <p>Manage your inventory, fulfill orders, review business insights, and share your handmade heritage.</p>
+      </div>
+    </section>
+
+    <!-- Glassmorphism Action Cards Grid -->
+    <main class="seller-dashboard-container">
+      <section class="seller-action-grid">
+        
+        <!-- 1. Add Product -->
+        <div class="seller-glass-card" onclick="openModal('addProductModal')">
+          <div class="card-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </div>
+          <h3>Add Product</h3>
+          <p>Upload new handmade creations, set prices, and record voice stories.</p>
+        </div>
+
+        <!-- 2. Listings -->
+        <div class="seller-glass-card" onclick="openModal('listingsModal')">
+          <div class="card-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+          </div>
+          <h3>Listings</h3>
+          <p>Manage stock quantities, adjust pricing, edit details, or remove items.</p>
+        </div>
+
+        <!-- 3. Orders -->
+        <div class="seller-glass-card" onclick="openModal('ordersModal')">
+          <div class="card-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <path d="M16 10a4 4 0 01-8 0"></path>
+            </svg>
+          </div>
+          <h3>Orders</h3>
+          <p>Track incoming purchases, verify paid status, push to GeM, or publish to Feed.</p>
+        </div>
+
+      </section>
+
+      <!-- Why Desi District Section -->
+      <section class="why-section">
+        <h2>Why Desi District?</h2>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-icon">🌿</div>
+            <h3>100% Authentic</h3>
+            <p>Direct from verified local artisans across India's cultural hubs.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">🤝</div>
+            <h3>Fair Trade First</h3>
+            <p>85%+ of every purchase goes directly to the craftsperson.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-icon">📜</div>
+            <h3>Story Behind Every Item</h3>
+            <p>Learn the history, technique, and artisan behind every piece.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- TAB 2: FEED PANEL -->
+  <div id="feedTab" class="seller-tab-content">
+    <div class="panel-inner-container">
+      <div class="panel-header">
+        <h2>Community Feed</h2>
+        <p>Promote your products, highlight verified buyer reviews, and celebrate artisan stories.</p>
+      </div>
+
+      <div class="feed-post-card">
+        <div class="post-user-info">
+          <div class="user-avatar">A</div>
+          <div>
+            <h4 class="user-name">Ananya Sharma <span class="verified-tag">✓ Verified Buyer</span></h4>
+            <span class="post-time">2 hours ago • Kolkata, WB</span>
+          </div>
+        </div>
+        <div class="post-content">
+          <p>"Just received this gorgeous handcrafted Terracotta Bankura Horse from Master Artisan Ramesh Pal. The intricate detail and clay texture are unreal! Truly preserving Bengal's heritage."</p>
+          <div class="post-image-box">
+            <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=800&q=80" alt="Terracotta Handcraft" />
+          </div>
+        </div>
+        <div class="post-actions">
+          <button class="action-btn">❤️ 128 Likes</button>
+          <button class="action-btn">💬 14 Comments</button>
+          <button class="action-btn">🔄 Share</button>
+        </div>
+        <div class="comment-input-row">
+          <input type="text" placeholder="Add an artisan comment or note..." />
+          <button class="btn-primary-sm">Reply</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 3: FINANCE PANEL -->
+  <div id="financeTab" class="seller-tab-content">
+    <div class="panel-inner-container">
+      <div class="panel-header flex-between">
+        <div>
+          <h2>Financial Dashboard & Analytics</h2>
+          <p>Real-time revenue tracking, profit margins, and automated voice guidance for local artisans.</p>
+        </div>
+        <button class="audio-bot-btn" onclick="readFinancialSummary()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          Listen Voice Guide (Pronunciation Bot)
+        </button>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="finance-stats-grid">
+        <div class="stat-glass-card">
+          <span class="stat-label">Total Earnings</span>
+          <h3 class="stat-value">₹84,500</h3>
+          <span class="stat-trend positive">+18.4% this month</span>
+        </div>
+        <div class="stat-glass-card">
+          <span class="stat-label">Net Profit</span>
+          <h3 class="stat-value">₹62,100</h3>
+          <span class="stat-sub">73.5% Profit Margin</span>
+        </div>
+        <div class="stat-glass-card">
+          <span class="stat-label">Total Orders</span>
+          <h3 class="stat-value">142</h3>
+          <span class="stat-sub">98.2% Fulfill Rate</span>
+        </div>
+      </div>
+
+      <!-- Synthetic Sales Chart Graphic -->
+      <div class="finance-chart-card">
+        <h3>Monthly Sales & Growth Projection</h3>
+        <div class="chart-graphic-placeholder">
+          <div class="chart-bar-group">
+            <div class="chart-bar" style="height: 45%;"><span class="bar-val">₹18k</span></div>
+            <span class="bar-label">May</span>
+          </div>
+          <div class="chart-bar-group">
+            <div class="chart-bar" style="height: 60%;"><span class="bar-val">₹24k</span></div>
+            <span class="bar-label">Jun</span>
+          </div>
+          <div class="chart-bar-group">
+            <div class="chart-bar" style="height: 75%;"><span class="bar-val">₹32k</span></div>
+            <span class="bar-label">Jul</span>
+          </div>
+          <div class="chart-bar-group">
+            <div class="chart-bar" style="height: 90%;"><span class="bar-val">₹42k</span></div>
+            <span class="bar-label">Aug</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: MY PROFILE PANEL -->
+  <div id="profileTab" class="seller-tab-content">
+    <div class="panel-inner-container">
+      <div class="panel-header">
+        <h2>Artisan Profile & Studio Management</h2>
+        <p>Manage customer direct messaging, meeting schedules, stories, and posts.</p>
+      </div>
+
+      <div class="profile-grid">
+        <!-- 1 on 1 Conversations -->
+        <div class="profile-glass-card">
+          <h3>💬 1-on-1 Buyer Chats</h3>
+          <div class="chat-list">
+            <div class="chat-item">
+              <strong>Siddharth Roy</strong>
+              <p>Requested custom color on Kantha Silk saree.</p>
+              <span class="chat-time">Today, 11:30 AM</span>
+            </div>
+            <div class="chat-item">
+              <strong>Priya Mehta</strong>
+              <p>Inquired regarding bulk handicraft delivery.</p>
+              <span class="chat-time">Yesterday</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Meeting Schedules -->
+        <div class="profile-glass-card">
+          <h3>📅 Scheduled Meetings & Consultation</h3>
+          <div class="meeting-list">
+            <div class="meeting-item">
+              <span class="meeting-badge">Upcoming</span>
+              <h4>Custom Pottery Consultation</h4>
+              <p>With buyer: Arpan Das</p>
+              <small>🕒 Today at 4:00 PM IST</small>
+            </div>
+            <div class="meeting-item">
+              <span class="meeting-badge">Tomorrow</span>
+              <h4>GeM Portal Verification Review</h4>
+              <p>With District Craft Officer</p>
+              <small>🕒 Sept 11, 2:30 PM IST</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 1: ADD PRODUCT -->
+  <div id="addProductModal" class="modal-overlay">
+    <div class="modal-glass-container">
+      <button class="close-modal-btn" onclick="closeModal('addProductModal')">×</button>
+      <h3>Add New Craft Item</h3>
+      <p class="modal-sub">Fill product pricing details, upload photos, or record voice descriptions.</p>
+
+      <form onsubmit="handleFormSubmit(event, 'Product uploaded successfully to catalog!')">
+        <!-- Photo Upload Box -->
+        <div class="photo-upload-box">
+          <div class="plus-icon-circle">+</div>
+          <span>Click or drag photos to upload craft images</span>
+          <input type="file" accept="image/*" class="file-input-hidden" />
+        </div>
+
+        <!-- Product Name -->
+        <div class="form-group-modal">
+          <label>Product Title</label>
+          <input type="text" placeholder="e.g. Handmade Bishnupur Silk Saree" required />
+        </div>
+
+        <!-- Voice Description -->
+        <div class="form-group-modal">
+          <div class="flex-between">
+            <label>Product Description</label>
+            <button type="button" class="voice-mic-btn" onclick="toggleVoiceInput('modalDescStatus')">
+              🎤 Voice Type
+            </button>
+          </div>
+          <textarea id="modalDescText" rows="3" placeholder="Speak or type product details, materials, and artform history..."></textarea>
+          <span id="modalDescStatus" class="voice-status-tag"></span>
+        </div>
+
+        <!-- Fixed Price Range Slider -->
+        <div class="form-group-modal">
+          <label>Price Setting (Fixed Range: ₹500 - ₹15,000)</label>
+          <div class="price-range-wrapper">
+            <input type="range" min="500" max="15000" step="250" value="3500" oninput="document.getElementById('priceVal').innerText = '₹' + this.value" />
+            <span id="priceVal" class="price-badge">₹3500</span>
+          </div>
+        </div>
+
+        <div class="modal-footer-right">
+          <button type="submit" class="btn-publish">Publish Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 2: LISTINGS -->
+  <div id="listingsModal" class="modal-overlay">
+    <div class="modal-glass-container max-width-750">
+      <button class="close-modal-btn" onclick="closeModal('listingsModal')">×</button>
+      <h3>Active Craft Listings</h3>
+      <p class="modal-sub">Manage synthetic listed items, edit details, or update stock supply.</p>
+
+      <div class="listings-list">
+        <!-- Item 1 -->
+        <div class="listing-item-card" id="listing-1">
+          <img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?auto=format&fit=crop&w=200&q=80" alt="Item" />
+          <div class="listing-info">
+            <h4 class="item-title">Bankura Terracotta Horse</h4>
+            <span class="item-price">₹2,400</span>
+            <div class="quantity-control-row">
+              <label>Stock Supply:</label>
+              <button type="button" onclick="adjustQty('qty1', -1)">-</button>
+              <span id="qty1" class="qty-num">12</span>
+              <button type="button" onclick="adjustQty('qty1', 1)">+</button>
+            </div>
+          </div>
+          <div class="listing-actions">
+            <button class="btn-icon-edit" title="Edit Item" onclick="openModal('editItemModal')">✏️</button>
+            <button class="btn-icon-delete" title="Delete Item" onclick="deleteListing('listing-1')">🗑️</button>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="listing-item-card" id="listing-2">
+          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=200&q=80" alt="Item" />
+          <div class="listing-info">
+            <h4 class="item-title">Baluchari Silk Handwoven Saree</h4>
+            <span class="item-price">₹8,500</span>
+            <div class="quantity-control-row">
+              <label>Stock Supply:</label>
+              <button type="button" onclick="adjustQty('qty2', -1)">-</button>
+              <span id="qty2" class="qty-num">5</span>
+              <button type="button" onclick="adjustQty('qty2', 1)">+</button>
+            </div>
+          </div>
+          <div class="listing-actions">
+            <button class="btn-icon-edit" title="Edit Item" onclick="openModal('editItemModal')">✏️</button>
+            <button class="btn-icon-delete" title="Delete Item" onclick="deleteListing('listing-2')">🗑️</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: EDIT LISTING ITEM -->
+  <div id="editItemModal" class="modal-overlay">
+    <div class="modal-glass-container">
+      <button class="close-modal-btn" onclick="closeModal('editItemModal')">×</button>
+      <h3>Edit Craft Listing</h3>
+      <form onsubmit="handleFormSubmit(event, 'Listing updated successfully!')">
+        <div class="form-group-modal">
+          <label>Change Product Name</label>
+          <input type="text" value="Bankura Terracotta Horse" required />
+        </div>
+        <div class="form-group-modal">
+          <label>Update Description</label>
+          <textarea rows="3">Handmade burnt-clay sculpture representing traditional craft from Bankura district.</textarea>
+        </div>
+        <div class="form-group-modal">
+          <label>Change Photo</label>
+          <input type="file" accept="image/*" />
+        </div>
+        <div class="modal-footer-right">
+          <button type="submit" class="btn-publish">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 3: ORDERS -->
+  <div id="ordersModal" class="modal-overlay">
+    <div class="modal-glass-container max-width-750">
+      <button class="close-modal-btn" onclick="closeModal('ordersModal')">×</button>
+      <h3>Received Orders & Fulfillment</h3>
+      <p class="modal-sub">View recent buyer orders, verify payment status, push to GeM portal, or share to feed.</p>
+
+      <div class="orders-list">
+        <!-- Order 1 -->
+        <div class="order-card-item">
+          <div class="order-top-row">
+            <div>
+              <strong>Order #WB-88421</strong>
+              <div class="order-buyer">Buyer: Debashis Mukherjee</div>
+            </div>
+            <span class="payment-green-tick">✓ Payment Received</span>
+          </div>
+          <p class="order-details">1x Dokra Brass Tribal Figurine (₹4,200)</p>
+          <div class="order-action-btns">
+            <a href="https://gem.gov.in/" target="_blank" class="btn-gem-link">Push to GeM ↗</a>
+            <button type="button" class="btn-feed-post" onclick="postOrderToFeed('Dokra Brass Tribal Figurine')">Post to Feed Panel</button>
+          </div>
+        </div>
+
+        <!-- Order 2 -->
+        <div class="order-card-item">
+          <div class="order-top-row">
+            <div>
+              <strong>Order #WB-88422</strong>
+              <div class="order-buyer">Buyer: Snigdha Sen</div>
+            </div>
+            <span class="payment-green-tick">✓ Payment Received</span>
+          </div>
+          <p class="order-details">2x Wooden Mask Handcrafted (₹2,100)</p>
+          <div class="order-action-btns">
+            <a href="https://gem.gov.in/" target="_blank" class="btn-gem-link">Push to GeM ↗</a>
+            <button type="button" class="btn-feed-post" onclick="postOrderToFeed('Wooden Mask Handcrafted')">Post to Feed Panel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-seller">
+    <div class="footer-content">
+      <a href="seller-home.html" class="brand-logo" style="color:#ffffff !important;">dɛşì dìştrìct</a>
+      <p>Preserving heritage, empowering artisans.</p>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Desi District. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/seller.js"></script>
+</body>
+</html>

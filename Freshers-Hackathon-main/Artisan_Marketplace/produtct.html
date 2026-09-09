@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Add Product — Desi Districts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/add-product.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="index.html" class="brand"><span class="brand-name">Desi District</span></a>
+    </div>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.textContent==='☰'?'✕':'☰'" aria-label="Menu">☰</button>
+    <div class="nav-right"></div>
+  </nav>
+
+  <main class="wrap">
+    <h1>Add New Product</h1>
+    <div class="section-card" style="max-width:720px">
+      <div style="display:grid;gap:10px">
+        <input id="pTitle" placeholder="Product title" />
+        <textarea id="pDesc" placeholder="Short description"></textarea>
+        <input id="pPrice" placeholder="Price (₹)" type="number" />
+        <select id="pCat"><option>Handicrafts</option><option>Textiles</option><option>Bakery</option><option>Musical instruments</option></select>
+        <input id="pShop" placeholder="Shop name" />
+        <input id="pImg" placeholder="Image URL or assets/images/filename.jpg" />
+        <div style="text-align:right"><button id="saveProd" class="btn primary">Save Product</button></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer wrap">© 2025 Desi Districts</footer>
+  <script src="js/add-product.js"></script>
+</body>
+</html>

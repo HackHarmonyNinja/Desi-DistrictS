@@ -1,0 +1,44 @@
+@import url('index.css');
+
+.section-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 2px;
+  box-shadow: 0 2px 16px var(--shadow);
+  margin-bottom: 16px;
+}
+
+#productReview img {
+  display: block;
+  margin-top: 12px;
+  border-radius: 2px;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 2px;
+  border: 1px solid var(--sand);
+  margin: 8px 0;
+  height: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  background: var(--bg);
+  resize: vertical;
+  transition: border-color 0.3s;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(160,82,45,0.1);
+}
+
+select {
+  padding: 8px 12px;
+  border-radius: 2px;
+  border: 1px solid var(--sand);
+  margin-top: 8px;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg);
+}

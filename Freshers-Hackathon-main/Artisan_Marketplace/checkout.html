@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Checkout — Desi Districts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="index.html" class="brand"><span class="brand-name">Desi District</span></a>
+    </div>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.textContent==='☰'?'✕':'☰'" aria-label="Menu">☰</button>
+    <div class="nav-right">
+      <a href="index.html">Home</a>
+      <a href="discover.html">Discover</a>
+      <a href="search.html">Search</a>
+      <a href="cart.html">Cart</a>
+      <a href="wishlist.html">Wishlist</a>
+    </div>
+  </nav>
+
+  <main class="wrap checkout-wrap">
+    <h1>Checkout</h1>
+
+    <section class="section-card cart-summary">
+      <h3>Order Summary</h3>
+      <div id="checkoutItems"></div>
+      <div class="total">Total: ₹<span id="checkoutTotal">0</span></div>
+    </section>
+
+    <section class="section-card payment-form">
+      <h3>Payment Information</h3>
+      <input id="cardName" placeholder="Name on card" />
+      <input id="cardNumber" placeholder="Card number" />
+      <div class="card-row">
+        <input id="expiry" placeholder="MM/YY" />
+        <input id="cvv" placeholder="CVV" />
+      </div>
+      <button id="payBtn" class="btn primary">Pay Now</button>
+    </section>
+  </main>
+
+  <footer class="footer wrap">© 2025 Desi Districts</footer>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

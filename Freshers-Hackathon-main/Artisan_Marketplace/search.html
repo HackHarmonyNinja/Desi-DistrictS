@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Search — Desi Districts</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="index.html" class="brand"><span class="brand-name">Desi District</span></a>
+    </div>
+    <button class="nav-toggle" onclick="this.nextElementSibling.classList.toggle('open');this.textContent=this.textContent==='☰'?'✕':'☰'" aria-label="Menu">☰</button>
+    <div class="nav-right">
+      <a href="index.html">Home</a><a href="discover.html">Discover</a><a href="search.html">Search</a><a href="cart.html">Cart (<span id="navCartCount3">0</span>)</a><a href="auth.html">Sign in</a>
+    </div>
+  </nav>
+
+  <main class="wrap layout">
+    <aside class="sidebar">
+      <div class="section-card">
+        <h3>Search</h3>
+        <div class="search"><input id="searchQ" placeholder="Search products or shops" /><button id="searchBtn" class="btn ghost">Go</button></div>
+      </div>
+
+      <div class="section-card">
+        <h3>Categories</h3>
+        <div id="searchCategories" class="chips"></div>
+      </div>
+
+      <div class="section-card">
+        <h3>Sort</h3>
+        <select id="searchSort">
+          <option value="popular">Most popular</option>
+          <option value="price_low">Price: Low → High</option>
+          <option value="price_high">Price: High → Low</option>
+        </select>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div class="section-head">
+        <h2>Search Results</h2>
+        <div class="meta">Showing <span id="searchShown">0</span></div>
+      </div>
+      <div id="searchResults" class="products grid-3"></div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">© 2025 Desi Districts</footer>
+  <script src="js/search.js"></script>
+</body>
+</html>

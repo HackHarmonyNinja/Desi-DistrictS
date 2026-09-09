@@ -1,0 +1,9 @@
+@import url('index.css');
+
+.section-card {
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  background: var(--card);
+  border-radius: 2px;
+  box-shadow: 0 2px 16px var(--shadow);
+}

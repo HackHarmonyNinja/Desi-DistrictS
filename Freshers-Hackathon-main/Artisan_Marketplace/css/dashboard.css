@@ -1,0 +1,33 @@
+@import url('index.css');
+
+.dashboard-grid {
+  display: flex;
+  gap: 24px;
+  align-items: start;
+  padding-top: 24px;
+}
+
+.section-card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 2px;
+  box-shadow: 0 2px 16px var(--shadow);
+}
+
+.section-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.vstack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    flex-direction: column;
+  }
+}

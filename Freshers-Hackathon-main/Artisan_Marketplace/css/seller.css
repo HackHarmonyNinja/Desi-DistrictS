@@ -1,0 +1,707 @@
+/* ==========================================================================
+   Seller Studio Glassmorphism & Panel Styling
+   ========================================================================== */
+
+/* Tab Panels Handling */
+.seller-tab-content {
+  display: none;
+}
+.seller-tab-content.active-tab {
+  display: block;
+}
+
+.panel-inner-container {
+  max-width: 1100px;
+  margin: 30px auto 60px auto;
+  padding: 0 20px;
+}
+
+.panel-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #2c2420;
+  margin-bottom: 6px;
+}
+
+.panel-header p {
+  color: #70625a;
+  font-size: 0.9rem;
+  margin-top: 0;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Modals Overlay & Glassmorphism Containers */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(20, 15, 12, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+}
+
+.modal-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-glass-container {
+  background: rgba(255, 252, 248, 0.95);
+  border: 1.5px solid rgba(226, 215, 199, 0.9);
+  border-radius: 12px;
+  width: 90%;
+  max-width: 540px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-glass-container.max-width-750 {
+  max-width: 750px;
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #70625a;
+  cursor: pointer;
+}
+
+.modal-glass-container h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: #2c2420;
+  margin: 0 0 4px 0;
+}
+
+.modal-sub {
+  font-size: 0.82rem;
+  color: #70625a;
+  margin-bottom: 20px;
+}
+/* Card Icon Wrapper & Icon Resizing */
+.card-icon-wrapper {
+  width: 52px !important;
+  height: 52px !important;
+  margin: 0 auto 16px auto !important;
+  background: rgba(160, 82, 45, 0.1) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: background 0.3s ease !important;
+}
+
+/* Restrict SVG dimensions so icons do not expand */
+.card-icon-wrapper svg {
+  width: 24px !important;
+  height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+  stroke: #a0522d !important;
+  flex-shrink: 0 !important;
+}
+
+.seller-glass-card:hover .card-icon-wrapper {
+  background: #a0522d !important;
+}
+
+.seller-glass-card:hover .card-icon-wrapper svg {
+  stroke: #ffffff !important;
+}
+
+/* Photo Upload Plus Box */
+.photo-upload-box {
+  border: 2px dashed #a0522d;
+  background: rgba(160, 82, 45, 0.04);
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.plus-icon-circle {
+  width: 42px;
+  height: 42px;
+  background: #a0522d;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto 10px auto;
+}
+
+.file-input-hidden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Form inputs in Modal */
+.form-group-modal {
+  margin-bottom: 16px;
+}
+
+.form-group-modal label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #2c2420;
+  margin-bottom: 6px;
+}
+
+.form-group-modal input[type="text"],
+.form-group-modal textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2d7c7;
+  border-radius: 6px;
+  background: #ffffff;
+  font-family: inherit;
+  font-size: 0.88rem;
+  box-sizing: border-box;
+}
+
+.voice-mic-btn {
+  background: rgba(160, 82, 45, 0.1);
+  color: #a0522d;
+  border: 1px solid rgba(160, 82, 45, 0.3);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.voice-status-tag {
+  font-size: 0.75rem;
+  color: #a0522d;
+  font-style: italic;
+  display: block;
+  margin-top: 4px;
+}
+
+.price-range-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.price-range-wrapper input[type="range"] {
+  flex: 1;
+  accent-color: #a0522d;
+}
+
+.price-badge {
+  background: #a0522d;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.modal-footer-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.btn-publish {
+  background: #a0522d;
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+/* 1. Force the 3 Action Cards into a Standing Horizontal Row */
+.seller-action-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important; /* 3 side-by-side standing cards */
+  gap: 24px !important;
+  margin-bottom: 80px !important;
+  align-items: stretch !important;
+}
+
+/* Card Styling & Icon Alignment */
+.seller-glass-card {
+  background: rgba(255, 252, 248, 0.88) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1.5px solid rgba(226, 215, 199, 0.8) !important;
+  border-radius: 12px !important;
+  padding: 36px 24px !important;
+  text-align: center !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.seller-glass-card:hover {
+  transform: translateY(-6px) !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: #a0522d !important;
+  box-shadow: 0 16px 36px rgba(160, 82, 45, 0.15) !important;
+}
+
+.card-icon-wrapper {
+  width: 52px !important;
+  height: 52px !important;
+  margin: 0 auto 16px auto !important;
+  background: rgba(160, 82, 45, 0.1) !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.card-icon-wrapper svg {
+  width: 24px !important;
+  height: 24px !important;
+  stroke: #a0522d !important;
+}
+
+.seller-glass-card h3 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.35rem !important;
+  color: #2c2420 !important;
+  margin: 0 0 8px 0 !important;
+}
+
+.seller-glass-card p {
+  font-size: 0.85rem !important;
+  color: #70625a !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+}
+
+/* 2. End Footer matching the Banner's Dark Brown Shade */
+.footer-seller {
+  background-color: #3a2e2b !important; /* Same rich dark brown as hero banner */
+  color: #fbf8f3 !important;
+  padding: 48px 20px 24px 20px !important;
+  text-align: center !important;
+  margin-top: 60px !important;
+}
+
+.footer-seller .brand-logo {
+  color: #ffffff !important;
+  font-family: 'Samarkan', 'Playfair Display', serif !important;
+  font-size: 1.8rem !important;
+  text-decoration: none !important;
+}
+
+.footer-seller p {
+  font-size: 0.88rem !important;
+  color: #e2d7c7 !important; /* Soft warm tone for footer description */
+  margin-top: 8px !important;
+}
+
+.footer-seller .footer-bottom {
+  margin-top: 28px !important;
+  padding-top: 18px !important;
+  border-top: 1px solid rgba(226, 215, 199, 0.2) !important;
+  font-size: 0.78rem !important;
+  color: #b8a898 !important;
+}
+
+/* Listings Cards */
+.listing-item-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #e2d7c7;
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.listing-item-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.listing-info {
+  flex: 1;
+}
+
+.item-title {
+  font-family: 'Playfair Display', serif;
+  margin: 0 0 4px 0;
+  font-size: 1.05rem;
+}
+
+.item-price {
+  color: #a0522d;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.quantity-control-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+  font-size: 0.8rem;
+}
+
+.quantity-control-row button {
+  background: #fbf8f3;
+  border: 1px solid #e2d7c7;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.qty-num {
+  font-weight: 700;
+  padding: 0 4px;
+}
+
+.listing-actions button {
+  background: none;
+  border: 1px solid #e2d7c7;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-left: 6px;
+}
+
+/* Orders Cards */
+.order-card-item {
+  background: #ffffff;
+  border: 1px solid #e2d7c7;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+}
+
+.order-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-buyer {
+  font-size: 0.8rem;
+  color: #70625a;
+}
+
+.payment-green-tick {
+  color: #2e7d32;
+  background: rgba(46, 125, 50, 0.1);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.order-details {
+  font-size: 0.9rem;
+  margin: 10px 0 14px 0;
+  font-weight: 500;
+}
+
+.order-action-btns {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-gem-link {
+  background: #0056b3;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.btn-feed-post {
+  background: #a0522d;
+  color: #ffffff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Community Feed Styling */
+.feed-post-card {
+  background: rgba(255, 252, 248, 0.9);
+  border: 1px solid #e2d7c7;
+  border-radius: 10px;
+  padding: 24px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.post-user-info {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  background: #a0522d;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.user-name {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.verified-tag {
+  color: #2e7d32;
+  font-size: 0.75rem;
+}
+
+.post-time {
+  font-size: 0.75rem;
+  color: #70625a;
+}
+
+.post-image-box img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 12px;
+  max-height: 320px;
+  object-fit: cover;
+}
+
+.post-actions {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.action-btn {
+  background: #ffffff;
+  border: 1px solid #e2d7c7;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.comment-input-row {
+  display: flex;
+  gap: 8px;
+}
+
+.comment-input-row input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #e2d7c7;
+  border-radius: 4px;
+}
+
+.btn-primary-sm {
+  background: #a0522d;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Finance Dashboard */
+.audio-bot-btn {
+  background: rgba(160, 82, 45, 0.12);
+  color: #a0522d;
+  border: 1px solid #a0522d;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.82rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.finance-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.stat-glass-card {
+  background: rgba(255, 252, 248, 0.9);
+  border: 1px solid #e2d7c7;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: #70625a;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #2c2420;
+  margin: 6px 0;
+}
+
+.stat-trend.positive {
+  color: #2e7d32;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.stat-sub {
+  font-size: 0.78rem;
+  color: #70625a;
+}
+
+.finance-chart-card {
+  background: rgba(255, 252, 248, 0.9);
+  border: 1px solid #e2d7c7;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.chart-graphic-placeholder {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 200px;
+  padding-top: 20px;
+  border-bottom: 2px solid #e2d7c7;
+}
+
+.chart-bar-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+  width: 50px;
+}
+
+.chart-bar {
+  width: 100%;
+  background: #a0522d;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.bar-val {
+  position: absolute;
+  top: -22px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2c2420;
+}
+
+.bar-label {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #70625a;
+}
+
+/* My Profile Grid */
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.profile-glass-card {
+  background: rgba(255, 252, 248, 0.9);
+  border: 1px solid #e2d7c7;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.profile-glass-card h3 {
+  font-family: 'Playfair Display', serif;
+  margin-top: 0;
+}
+
+.chat-item, .meeting-item {
+  border-bottom: 1px solid #e2d7c7;
+  padding: 12px 0;
+}
+
+.chat-item:last-child, .meeting-item:last-child {
+  border-bottom: none;
+}
+
+.chat-item p, .meeting-item p {
+  font-size: 0.85rem;
+  margin: 4px 0;
+  color: #70625a;
+}
+
+.chat-time {
+  font-size: 0.72rem;
+  color: #a0522d;
+}
+
+.meeting-badge {
+  background: #a0522d;
+  color: #fff;
+  font-size: 0.68rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
