@@ -36,6 +36,44 @@ function deleteListing(listingId) {
   }
 }
 
+// Simulated Voice Typing
+function toggleVoiceInput(statusElemId) {
+  const statusElem = document.getElementById(statusElemId);
+  if (statusElem) {
+    statusElem.innerText = "Listening... Speak your product description now.";
+    setTimeout(() => {
+      statusElem.innerText = "Captured: Handcrafted using organic regional clays.";
+    }, 2500);
+  }
+}
+// Dynamic Price Calculation Handler
+function calculateDynamicPricing() {
+  const basePriceInput = document.getElementById('basePriceInput');
+  const buyerPriceElem = document.getElementById('displayBuyerPrice');
+  const platformFeeElem = document.getElementById('displayPlatformFee');
+  const netEarningsElem = document.getElementById('displayNetEarnings');
+
+  if (!basePriceInput) return;
+
+  let basePrice = parseFloat(basePriceInput.value) || 0;
+
+  // Calculation Formula (5% GST for handicrafts, 15% Desi District Fair Trade commission)
+  const gst = basePrice * 0.05;
+  const buyerPrice = Math.round(basePrice + gst);
+  const platformFee = Math.round(basePrice * 0.15);
+  const netEarnings = Math.max(0, Math.round(basePrice - platformFee));
+
+  // Update UI Elements with Formatted Currency
+  if (buyerPriceElem) buyerPriceElem.innerText = '₹' + buyerPrice.toLocaleString('en-IN');
+  if (platformFeeElem) platformFeeElem.innerText = '-₹' + platformFee.toLocaleString('en-IN');
+  if (netEarningsElem) netEarningsElem.innerText = '₹' + netEarnings.toLocaleString('en-IN');
+}
+
+// Automatically initialize calculation on page load
+document.addEventListener('DOMContentLoaded', () => {
+  calculateDynamicPricing();
+});
+
 // Pronunciation Bot (Text-to-Speech)
 function readFinancialSummary() {
   const textToRead = "Your total monthly revenue is 84,500 Rupees with a net profit margin of 73.5%. You have completed 142 orders this month.";

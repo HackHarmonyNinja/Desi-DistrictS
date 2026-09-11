@@ -426,12 +426,33 @@
           <span id="modalDescStatus" class="voice-status-tag"></span>
         </div>
 
-        <!-- Fixed Price Range Slider -->
-        <div class="form-group-modal">
-          <label>Price Setting (Fixed Range: ₹500 - ₹15,000)</label>
-          <div class="price-range-wrapper">
-            <input type="range" min="500" max="15000" step="250" value="3500" oninput="document.getElementById('priceVal').innerText = '₹' + this.value" />
-            <span id="priceVal" class="price-badge">₹3500</span>
+        <!-- Dynamic Pricing & Net Payout Calculator -->
+        <div class="form-group-modal dynamic-price-section">
+          <label class="flex-between">
+            <span>Dynamic Pricing & Earnings</span>
+            <span class="badge-dynamic">Live Estimate</span>
+          </label>
+
+          <div class="dynamic-price-grid">
+            <div class="price-input-wrapper">
+              <span class="currency-symbol">₹</span>
+              <input type="number" id="basePriceInput" placeholder="Base Price" value="2500" min="100" oninput="calculateDynamicPricing()" required />
+            </div>
+
+            <div class="dynamic-calc-card">
+              <div class="calc-row">
+                <span>Buyer Price (incl. GST 5%):</span>
+                <strong id="displayBuyerPrice">₹2,625</strong>
+              </div>
+              <div class="calc-row">
+                <span>Platform Fee (15% Fair Trade):</span>
+                <span id="displayPlatformFee">-₹375</span>
+              </div>
+              <div class="calc-row highlight-row">
+                <span>Net Artisan Earnings:</span>
+                <strong id="displayNetEarnings" class="earning-text">₹2,250</strong>
+              </div>
+            </div>
           </div>
         </div>
 

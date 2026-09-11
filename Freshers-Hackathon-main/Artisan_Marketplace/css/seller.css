@@ -338,6 +338,92 @@
   font-size: 0.78rem !important;
   color: #b8a898 !important;
 }
+/* Dynamic Pricing Module Styling */
+.dynamic-price-section {
+  background: rgba(250, 247, 242, 0.65);
+  border: 1px solid rgba(226, 215, 199, 0.9);
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.badge-dynamic {
+  background: rgba(160, 82, 45, 0.12);
+  color: #a0522d;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dynamic-price-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 16px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.price-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.price-input-wrapper .currency-symbol {
+  position: absolute;
+  left: 12px;
+  font-weight: 700;
+  color: #a0522d;
+  font-size: 1.1rem;
+}
+
+.price-input-wrapper input[type="number"] {
+  padding-left: 30px !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: #2c2420 !important;
+  border: 1.5px solid #a0522d !important;
+}
+
+.dynamic-calc-card {
+  background: #ffffff;
+  border: 1px solid #e2d7c7;
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+
+.calc-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #70625a;
+  margin-bottom: 6px;
+}
+
+.calc-row:last-child {
+  margin-bottom: 0;
+}
+
+.highlight-row {
+  border-top: 1px dashed #e2d7c7;
+  padding-top: 6px;
+  margin-top: 4px;
+  font-size: 0.85rem;
+}
+
+.earning-text {
+  color: #2e7d32 !important;
+  font-size: 1rem !important;
+}
+
+@media (max-width: 580px) {
+  .dynamic-price-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* Listings Cards */
 .listing-item-card {
