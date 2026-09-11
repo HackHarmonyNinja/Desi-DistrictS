@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "Handcrafted Terracotta Vase",
+    "category": "Handicrafts",
+    "price": 499,
+    "desc": "Decorative handmade terracotta vase shaped on a traditional potter wheel.",
+    "shop": "Village Crafts",
+    "img": "assets/images/product-terracotta.png",
+    "featured": true
+  },
+  {
+    "id": "2",
+    "title": "Traditional Bandhani Fabric",
+    "category": "Textiles",
+    "price": 799,
+    "desc": "Authentic Bandhani tie-dye textile from Kutch artisans.",
+    "shop": "Kutch Weavers",
+    "img": "assets/images/story-embroidery.png",
+    "featured": false
+  },
+  {
+    "id": "3",
+    "title": "Handcrafted Bamboo Flute",
+    "category": "Musical instruments",
+    "price": 349,
+    "desc": "Traditional bansuri crafted from seasoned bamboo.",
+    "shop": "Rhythm India",
+    "img": "assets/images/story-woodcraft.png",
+    "featured": true
+  }
+]
